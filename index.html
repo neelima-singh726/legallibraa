@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      height: 100%;
+      background-color: black;
+    }
+    /* html {
+      scroll-behavior:smooth;
+    } */
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-repeat: no-repeat;
+      background-image: url('an.webp');
+      background-size: cover;             /* Scales image to cover entire container */
+  background-position: center center; 
+      /* background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80'); */
+    }
+    .nav-bar {
+        border-radius: 0%  0% 3% 3%;
+      display: flex;
+      top: 0;
+      z-index: 1000;
+      position: sticky;
+      width: 100%;
+      height: 150px;
+      background-color: black;
+      color: white;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+      font-family: "Segoe UI", sans-serif;
+    }
+    .logo {
+      font-size: 20px;
+      animation: 2s loading ease-in-out infinite;
+    }
+
+    @keyframes loading {
+      0% {
+        scale: 0;
+      }
+      50% {
+        scale: 1;
+      }
+      100%{
+        scale:1;
+      }
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover {
+      color: #d4af37;
+
+    }
+    .content {
+      flex: 1;
+      overflow-y: auto;
+      color: white;
+      padding: 40px;
+    }
+
+    .section {
+      margin-bottom: 60px;
+      border-radius: 20%;
+    }
+    
+
+  .about {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+    .about-text {
+      display: flex;
+      flex: 0 0 70%;
+      flex-direction: column;
+      justify-content: center;
+      padding-right: 20px;
+    }
+    .about-text h2 {
+      font-size: 38px;
+      font-style: italic;
+      font-family:cursive;
+      margin: auto;
+    }
+    .about-text p {
+        font-size: larger;
+      margin: auto;
+      padding: 20px 50px;
+      max-width: 80%;
+      text-align: center;
+      line-height: 1.9;
+      border-radius: 10px 0 0 10px;
+      font-style: italic;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    .practice,
+    .experience,
+    .testimonials {
+      display: flex;
+      justify-content: center ;
+      margin-bottom: 90px;
+    }
+   
+    .pp h2{
+        margin:auto;
+      font-style: italic;
+      font-family:cursive;
+    }
+
+    .pp p {
+      font-size: larger;
+      margin: auto;
+      padding: 20px 20px;
+      max-width: 90%;
+      text-align: center;
+      line-height: 1.9;
+      border-radius: 10px 0 0 10px;
+      font-style: italic;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    
+    .about-photo img { 
+      display: flex;
+      justify-content: center;
+      width: 80%;
+      height: 80%;
+      box-shadow: 0 4px 8px #021a2b;
+      animation-duration: 2s;
+      animation-name: spin;
+      border-radius: 20%;
+    }
+  
+    .practice h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+
+    blockquote {
+      font-style: italic;
+      border-left: 4px solid #d4af37;
+      padding-left: 15px;
+      margin-top: 10px;
+    }
+    .footer-container {
+  background-color:black;        
+  padding: 30px 40px;             
+  color: white;                 
+  text-align: center;            
+}
+
+.footer-container h2 {
+  font-size: 26px;                
+  margin-bottom: 60px;          
+  font-weight: bold;
+
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  margin: auto;
+}
+
+.footer p {
+  font-size: 16px;               /* Decent font size for contact */
+  font-family: 'Segoe UI', sans-serif;
+}
+
+@keyframes spin{
+    0%{
+        scale: 0.2
+    }
+    50%{
+        scale: 0.4;
+        transform: rotate(0);
+        border-radius: 0;
+    }
+    100%{
+        transform: rotate(360deg);
+        border-radius: 20%;
+        scale: 1;
+    }
+} 
+/* Tablet: max-width 768px */
+@media (max-width: 768px) {
+  .about-text h2 {
+    font-size: 24px;
+  }
+  .nav-bar {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+  }
+  .nav-links {
+    justify-content: center;
+  }
+  .about {
+    flex-direction: column;
+  }
+  .about-text,
+  .about-photo {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+  .about-text p,
+  .pp p {
+    padding: 10px;
+  }
+}
+
+/* Mobile: max-width 480px (more compact adjustments) */
+@media (max-width: 480px) {
+  .about-text h2 {
+    font-size: 20px; /* smaller heading on phones */
+  }
+  .nav-bar {
+    padding: 10px;
+  }
+  .about-text p,
+  .pp p {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+  </style>
+  <body>
+    <div class="wrapper">
+</video>
+      <div class="nav-bar">
+        <div class="logo">Adv. Rajat Chauhan</div>
+        <nav class="nav-links">
+          <a href="#about">About</a>
+          <a href="#practice">Practice Areas</a>
+          <a href="#experience">Experience</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+
+      <div class="content">
+        <div class="section section1" id="about">
+          <div class="about">
+            <div class="about-text">
+              <h2>About Me</h2>
+              <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
+
+              </p>
+            </div>
+            <div class="about-photo">
+              <img src="PHOTO-2025-06-04-14-14-02.jpg" alt="Lawyer Photo" />
+            </div>
+          </div>
+        </div>
+
+        <div class="section section2">
+             <div class="practice" id="practice">
+            <div class="pp">
+                <center>
+              <h2>Practice Areas</h2>
+              </center>
+              <p>
+             
+               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
+
+        
+              </p>
+            </div>
+          </div>
+          <div class="experience" id="experience">
+            <div class="pp">
+                <center>
+              <h2>Experience</h2>
+              </center>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
+
+              </p>
+            </div>
+          </div>
+          <div class="testimonials" id="testimonials">
+            <div class="pp">
+                <center>
+              <h2>Testimonials</h2>
+              </center>
+              <p>
+              <blockquote>
+                "Extremely professional and truly understands the client needs."
+                - A satisfied client
+              </blockquote>
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="section section3" id="contact">
+            <div class="footer-container">
+    <h2>Contact Me</h2>
+    <div class="footer">
+  <div>
+    <p>
+      📧 <a href="mailto:rajatchauhan2306@gmail.com" style="color: white; text-decoration: none;">
+        rajatchauhan2306@gmail.com
+      </a>
+    </p>
+  </div>
+  <div>
+    <p>
+      📞 <a href="tel:+917015449574" style="color: white; text-decoration: none;">
+        +91 7015449574
+      </a>
+    </p>
+  </div>
+  <div>
+    <p>
+      🗺️ <a href="https://www.google.com/maps?q=Delhi,+India" target="_blank" style="color: white; text-decoration: none;">
+        Delhi, India
+      </a>
+    </p>
+  </div>
+  <div>
+    <p>
+      🐦 <a href="https://x.com/legalibra" target="_blank" style="color: white; text-decoration: none;">
+        @legallibra
+      </a>
+    </p>
+  </div>
+</div>
+
+  </div>
+      </div>
+  </body>
+</html>
